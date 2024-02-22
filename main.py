@@ -42,13 +42,14 @@ def main():
             guessed_letters.add(guess)
             if display_word(word_to_guess, guessed_letters) == word_to_guess:
                 print(f"Congratulations! You guessed the word: {word_to_guess}")
-                break
+                main()
         else:
             max_attempts -= 1
             print(f"Incorrect guess. {max_attempts} attempts remaining.")
 
     if max_attempts == 0:
         print(f"Sorry, you're out of attempts. The word was: {word_to_guess}")
+        main()
 
 if __name__ == "__main__":
     main()
